@@ -1,0 +1,748 @@
+/*FONT*/
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*RESET*/
+* {
+    font-family: 'Nanum Myeongjo', serif;
+    margin: auto;
+}
+
+h2,
+h3 {
+    font-family: 'Abril Fatface', cursive;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background: url(../img/sub_bg01.jpg) no-repeat;
+    background-size: cover;
+}
+
+#container {
+    text-align: center;
+}
+
+.wrap {
+    width: 1280px;
+    margin: auto;
+}
+
+img {
+    font-size: 0px;
+}
+
+/*본문*/
+/*HEADER*/
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 215px;
+    z-index: 100;
+    transition: all 0.8s;
+}
+
+#header  > h1.logo {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#header  > h1.mini_logo {
+    display: none;
+    position: absolute;
+    top: 36.5px;
+    left: 180px;
+}
+
+#header > .header_icon {
+    position: absolute;
+    top: calc(50% - 10px);
+    height: 20px;
+    line-height: 20px;
+    right: 180px;
+    display: flex;
+}
+
+#header > .header_icon > .search {
+    height: 20px;
+    line-height: 20px;
+}
+
+#header > .header_icon > .search > img {
+    width: 20px;
+    height: 20px;
+}
+
+#header > .header_icon > .search > input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    height: 20px;
+    width: 0px;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+#header > .header_icon > a {
+    width: 40px;
+}
+
+
+#header > .header_icon > a > img {
+    width: 20px;
+    height: 20px;
+}
+
+#header > .header_icon > input {
+    display: none;
+}
+
+#header > .header_icon > label {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 0 10px;
+}
+
+#header > .header_icon > label > span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: #000;
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+#header > .header_icon > label > span:nth-child(1) {
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+#header > .header_icon > label > span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header > .header_icon > label > span:nth-child(3) {
+    top: 80%;
+    transform: translateY(-50%);
+}
+
+#header > .header_icon > label + div.menu_inner {
+    z-index: 110;
+    width: 100%;
+    height: 220px;
+    position: fixed;
+    top: -420px;
+    left: 0;
+    background: url(../img/search_bg.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 15%;
+    text-align: center;
+    transition: all 0.5s;
+
+}
+
+#header > .header_icon > label + div.menu_inner > ul {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+#header > .header_icon > label + div.menu_inner > ul > li > a {
+    border-bottom: 2px solid #b98e6e;
+    color: #433a30;
+}
+
+#header > .header_icon > label + div.menu_inner > ul > li > ul {
+    margin-top: 30px;
+}
+
+#header > .header_icon > label + div.menu_inner > ul > li > ul > li {
+    font-size: 20px;
+    font-weight: 700;
+    height: 35px;
+}
+
+#header > .header_icon > label + div.menu_inner > ul > li > ul > li > a {
+    color: #433a30;
+    transition: all 0.5s;
+}
+
+#header > .header_icon > label + div.menu_inner > ul > li > ul > li > a:hover {
+    color: #f4f4f4;
+}
+
+#header > .header_icon > input:checked + label {
+    z-index: 150;
+}
+
+#header > .header_icon > input:checked + label > span:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#header > .header_icon > input:checked + label > span:nth-child(2) {
+    display: none;
+}
+
+#header > .header_icon > input:checked + label > span:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#header > .header_icon > input:checked + label + div {
+    top: 0;
+}
+
+#header > ul {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    line-height: 100px;
+    transition: all 0.8s;
+    padding-top: 115px;
+}
+
+#header > ul > li > a {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 20px;
+    color: #433a30;
+}
+
+#header > ul > li > a:hover {
+    color: #b98e6e;
+    font-weight: 900;
+}
+
+/*SIDE*/
+#side {
+    position: fixed;
+    top: 500px;
+    right: -100px;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+#side > ul {
+    display: flex;
+    font-size: 15px;
+    font-weight: 900;
+    transform: rotate(-90deg);
+    line-height: 20px;
+}
+
+#side > ul > li {}
+
+#side > ul > li > a {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    color: #433a30;
+    margin-left: 20px;
+}
+
+#side > ul > li > a > i {
+    font-size: 20px;
+}
+
+/*SECTION*/
+#section {
+    padding: 205px 0 100px 0;
+}
+
+#section > p.sub_nav {
+    text-align: left;
+    font-size: 15px;
+    color: #b98e6e;
+    padding: 20px 0;
+}
+
+#section > p.sub_nav > i {
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+#section > p.sub_nav > b {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#section > .product {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+#section > .product > .product_img > input {
+    display: none;
+}
+
+#section > .product > .product_img > .sub {
+    text-align: left;
+    font-size: 0px;
+    padding-top: 40px;
+}
+
+#section > .product > .product_img > .sub > label {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+}
+
+#section > .product > .product_img > .sub > label > img {
+    width: 100%;
+    height: 100%;
+}
+
+#section > .product > .product_img > div.main {
+    display: none;
+    width: 550px;
+    height: 550px;
+    position: relative;
+}
+
+#section > .product > .product_img > div.main > img {
+    display: block;
+    width: 550px;
+    height: 550px;
+}
+
+.magnifier {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid #b98e6e;
+    display: none;
+}
+.magnifier02 {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid #b98e6e;
+    display: none;
+}
+.magnifier03 {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid #b98e6e;
+    display: none;
+}
+.magnifier04 {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid #b98e6e;
+    display: none;
+}
+
+
+#section > .product > .product_img > input[id="img01"]:checked ~ .p_img01 {
+    display: block;
+}
+
+#section > .product > .product_img > input[id="img02"]:checked ~ .p_img02 {
+    display: block;
+}
+
+#section > .product > .product_img > input[id="img03"]:checked ~ .p_img03 {
+    display: block;
+}
+
+#section > .product > .product_img > input[id="img04"]:checked ~ .p_img04 {
+    display: block;
+}
+
+#section > .product > .product_txt > table {
+    display: block;
+    width: 550px;
+    text-align: left;
+}
+
+#section > .product > .product_txt > table tr {
+    display: block;
+    width: 550px;
+    height: 60px;
+    line-height: 60px;
+    color: #b98e6e;
+    border-top: 2px solid #b98e6e;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#section > .product > .product_txt > table tr th {
+    font-size: 25px;
+}
+
+#section > .product > .product_txt > table tr td input[type="text"].Quantity {
+    width: 50px;
+}
+
+#section > .product > .product_txt > table tr td input[type="text"] {
+    background-color: transparent;
+    width: 100px;
+    text-align: center;
+    border: none;
+    color: #b98e6e;
+    font-weight: 900;
+    font-size: 20px;
+    outline: none;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"] {
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].btn_Quantity {
+    font-size: 15px;
+    color: #fff;
+    background-color: #b98e6e;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].btn_Quantity:hover {
+    border-radius: 5px;
+    transform: translateY(-5px);
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].btn_buy {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].buy {
+    background-color: #b98e6e;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].cart {
+    background-color: #d1baa8;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].wish {
+    background-color: #d1baa8;
+}
+
+#section > .product > .product_txt > table tr td input[type="button"].btn_buy:hover {
+    border-radius: 15px;
+}
+
+#section > .product_info > .product_info_tit {
+    height: 60px;
+    line-height: 60px;
+    border-top: 2px solid #b98e6e;
+    border-bottom: 2px solid #b98e6e;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 130px;
+}
+
+#section > .product_info > input {
+    display: none;
+}
+
+#section > .product_info > .product_info_tit > label {
+    color: #b98e6e;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+#section > .product_info > div.info_inner01 > p {
+    color: #8c7a64;
+    margin-bottom: 90px;
+    font-size: 18px;
+}
+
+#section > .product_info > div.info_inner01 > p > b {
+    font-size: 40px;
+    line-height: 100px;
+}
+
+#section > .product_info > input[type="radio"]:checked ~ .product_info_tit > label::after {
+    content: '';
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid #b98e6e;
+    display: none;
+}
+
+#section > .product_info > div.info_inner {
+    display: none;
+    text-align: center;
+}
+
+#section > .product_info > input[id="info01"]:checked ~ .info_inner01 {
+    display: block;
+}
+
+#section > .product_info > input[id="info01"]:checked ~ .product_info_tit > label[for="info01"]::after {
+    display: block;
+}
+
+#section > .product_info > input[id="info02"]:checked ~ .info_inner02 {
+    display: block;
+}
+
+#section > .product_info > input[id="info02"]:checked ~ .product_info_tit > label[for="info02"]::after {
+    display: block;
+}
+
+#section > .product_info > input[id="info03"]:checked ~ .info_inner03 {
+    display: block;
+}
+
+#section > .product_info > input[id="info03"]:checked ~ .product_info_tit > label[for="info03"]::after {
+    display: block;
+}
+
+#section > .product_info > input[id="info04"]:checked ~ .info_inner04 {
+    display: block;
+}
+
+#section > .product_info > input[id="info04"]:checked ~ .product_info_tit > label[for="info04"]::after {
+    display: block;
+}
+
+#section > .product_info > div.info_inner03 {
+    text-align: left;
+}
+
+#section > .product_info > div.info_inner > ul > li {
+    margin-bottom: 100px;
+    color: #433a30;
+    font-size: 18px;
+}
+
+#section > .product_info > div.info_inner > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+#section > .product_info > div.info_inner > ul > li > b {
+    display: block;
+    font-size: 25px;
+    height: 50px;
+    text-align: left;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#section > .product_info > div.info_inner > ul > li > b::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 3px solid #d1baa8;
+}
+
+#section > .product_info > div.info_inner03 > ul > li > p {
+    line-height: 1.6;
+}
+
+#section > .product_info > div.info_inner03 > ul > li > p.acc {
+    margin-top: 30px;
+}
+
+#section > .product_info > div.info_inner03 > ul > li > ul > li {
+    line-height: 1.6;
+}
+
+#section > .product_info > div.info_inner03 > ul > li > ul > li.in {
+    margin-left: 90px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit {
+    display: flex;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit > .profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit > .profile > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit > .score_board {
+    text-align: left;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit > .score_board > .score {
+    color: indianred;
+    font-size: 25px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_tit > .score_board > .date {
+    font-size: 15px;
+    height: 20px;
+    line-height: 20px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner {
+    margin-top: 20px;
+    padding-left: 80px;
+    text-align: left;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_pre {
+    display: flex;
+    justify-content: space-between;
+    height: 110px;    
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_pre > .review_pre_text {
+    line-height: 2;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 3;
+
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_pre > .review_pre_img {
+    width: 100px;
+    text-align: center;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_pre > .review_pre_img > img {
+    width: 80px;
+    padding: 15px 10px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_full {
+    display: none;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_full > .review_full_text {
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_full > .review_full_img {
+    width: 40%;
+    padding: 0 30%;
+}
+
+#section > .product_info > div.info_inner04 > ul > li > div.review > .review_inner > .review_full > .review_full_img > img {
+    width: 100%;
+}
+#section > .product_info > div.info_inner04 > ul:last-child{
+    margin-top: 100px;
+}
+#section > .product_info > div.info_inner04 > ul > li > button{
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #b98e6e;
+    margin-top: 100px;
+    transition: all 0.5s;
+}
+#section > .product_info > div.info_inner04 > ul > li > button:hover{
+    border-radius: 15px;
+}
+
+/*FOOTER*/
+#footer {
+    background: url(../img/footer_bg.png);
+    padding-top: 150px;
+    color: #433a30;
+}
+
+#footer > .wrap > h4 {
+    text-align: left;
+}
+
+#footer > .wrap > .footer_inner {
+    overflow: hidden;
+    padding: 20px 0;
+    text-align: left;
+}
+
+#footer > .wrap > .footer_inner > ul {
+    float: left;
+}
+
+#footer > .wrap > .footer_inner > ul:first-child {
+    margin-right: 70px;
+}
+
+#footer > .wrap > .footer_inner ul > h5 {
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#footer > .wrap > .footer_inner ul > li {
+    line-height: 1.5;
+}
+
+#footer > .wrap > .footer_inner ul:nth-child(2) > li {
+    margin-left: -10px;
+}
+
+#footer > .wrap > .footer_inner ul > li > span {
+    color: #8c7a64;
+    margin: 0 10px;
+}
+
+#footer > .wrap > .footer_inner02 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+#footer > .wrap > .footer_inner02 > ul {
+    display: flex;
+}
+
+#footer > .wrap > .footer_inner02 > ul > li > a {
+    color: #374442;
+    margin-right: 20px;
+}
+
+#footer > .wrap > .footer_inner02 > p > a {
+    color: #374442;
+    font-weight: 700;
+}
